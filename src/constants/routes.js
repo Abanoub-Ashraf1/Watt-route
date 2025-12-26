@@ -1,7 +1,3 @@
-/**
- * Application Routes Constants
- * Centralized route definitions for consistent navigation
- */
 export const ROUTES = {
   HOME: "/",
   EV_SOLUTIONS: "/ev-solutions",
