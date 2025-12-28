@@ -67,18 +67,20 @@
   flex-shrink: 0;
 }
 
-.icon {
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.iconSvg {
   width: 36px;
   height: 36px;
-  object-fit: contain;
-  object-position: center;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: high-quality;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  display: block;
+  color: var(--color-secondary);
+  stroke: currentColor;
+  flex-shrink: 0;
 }
 
 .cardTitle {
@@ -132,20 +134,9 @@
     margin-bottom: var(--spacing-md);
   }
 
-  .icon {
+  .iconSvg {
     width: 32px;
     height: 32px;
-    max-width: 32px;
-    max-height: 32px;
-    min-width: 32px;
-    min-height: 32px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: high-quality;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    display: block;
   }
 }
 
