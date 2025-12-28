@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Button from "../../common/Button/Button";
+import AsyncImage from "../../common/AsyncImage/AsyncImage";
 import { fadeInUp, slideInLeft, slideInRight } from "../../../utils/animations";
 import { useScrollToSection } from "../../../hooks/useScrollToSection";
 import { ROUTES } from "../../../constants/routes";
@@ -44,7 +45,7 @@ const Hero = () => {
       {/* Electric Animated Background */}
       <div className={styles.backgroundImage}>
         {/*  Hero background image */}
-        <img
+        <AsyncImage
           src="/images/hero-bg.png"
           alt="EV Charging Stations"
           className={styles.bgImage}

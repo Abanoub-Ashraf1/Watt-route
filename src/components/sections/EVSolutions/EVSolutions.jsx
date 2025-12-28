@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Card from "../../common/Card/Card";
+import LazyIcon from "../../common/LazyIcon/LazyIcon";
 import { fadeInUp, stagger } from "../../../utils/animations";
 import styles from "./EVSolutions.module.css";
 
@@ -71,7 +72,7 @@ const EVSolutions = () => {
               <Card className={styles.card}>
                 {/* Icon */}
                 <div className={styles.iconWrapper}>
-                  <img
+                  <LazyIcon
                     src={solution.icon}
                     alt={t(solution.titleKey)}
                     className={styles.icon}
