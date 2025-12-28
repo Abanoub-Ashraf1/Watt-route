@@ -10,37 +10,37 @@ const EVSolutions = () => {
   const solutions = [
     {
       id: 1,
-      icon: "/images/icons/charging.svg",
+      icon: "/images/icons/charging.webp",
       titleKey: "evSolutions.smartCharging",
       descKey: "evSolutions.smartChargingDesc",
     },
     {
       id: 2,
-      icon: "/images/icons/payment.svg",
+      icon: "/images/icons/payment.webp",
       titleKey: "evSolutions.unifiedPayment",
       descKey: "evSolutions.unifiedPaymentDesc",
     },
     {
       id: 3,
-      icon: "/images/icons/real-time.svg",
+      icon: "/images/icons/real-time.webp",
       titleKey: "evSolutions.realTimeStatus",
       descKey: "evSolutions.realTimeStatusDesc",
     },
     {
       id: 4,
-      icon: "/images/icons/support.svg",
+      icon: "/images/icons/support.webp",
       titleKey: "evSolutions.support24",
       descKey: "evSolutions.support24Desc",
     },
     {
       id: 5,
-      icon: "/images/icons/security.svg",
+      icon: "/images/icons/security.webp",
       titleKey: "evSolutions.reliable",
       descKey: "evSolutions.reliableDesc",
     },
     {
       id: 6,
-      icon: "/images/icons/mobile-app.svg",
+      icon: "/images/icons/mobile-app.webp",
       titleKey: "evSolutions.mobileApp",
       descKey: "evSolutions.mobileAppDesc",
     },
