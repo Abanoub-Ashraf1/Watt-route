@@ -62,6 +62,10 @@ const LazyIcon = ({ src, alt, className = "", onError, ...props }) => {
           initial={{ filter: "blur(10px)", opacity: 0 }}
           animate={{ filter: "blur(0px)", opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
+          style={{
+            display: "block",
+            ...props.style,
+          }}
           {...props}
         />
       ) : (
