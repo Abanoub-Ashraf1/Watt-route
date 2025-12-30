@@ -73,6 +73,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  transform: translateZ(0);
 }
 
 .iconSvg {
@@ -81,6 +82,10 @@
   color: var(--color-secondary);
   stroke: currentColor;
   flex-shrink: 0;
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .cardTitle {
