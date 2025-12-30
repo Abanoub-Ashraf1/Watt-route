@@ -30,8 +30,8 @@ const LazyIcon = ({ src, alt, className = "", onError, ...props }) => {
         });
       },
       {
-        rootMargin: "100px",
-        threshold: 0.01,
+        rootMargin: "100px", // Increased for better mobile experience
+        threshold: 0.01, // Trigger even if 1% visible
       }
     );
 
@@ -48,6 +48,7 @@ const LazyIcon = ({ src, alt, className = "", onError, ...props }) => {
     return null;
   }
 
+  // Transparent 1x1 pixel data URL to preserve layout
   const placeholderSrc =
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E";
 
@@ -58,15 +59,11 @@ const LazyIcon = ({ src, alt, className = "", onError, ...props }) => {
           src={imageSrc}
           alt={alt}
           className={className}
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ filter: "blur(10px)", opacity: 0 }}
+          animate={{ filter: "blur(0px)", opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           style={{
             display: "block",
-            transform: "translateZ(0)",
-            WebkitTransform: "translateZ(0)",
-            backfaceVisibility: "hidden",
-            WebkitBackfaceVisibility: "hidden",
             ...props.style,
           }}
           {...props}

@@ -18,7 +18,10 @@ const ChargingIcon = () => (
     strokeLinejoin="round"
     className={styles.iconSvg}
   >
-    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    <polygon
+      vectorEffect="non-scaling-stroke"
+      points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+    ></polygon>
   </svg>
 );
 
@@ -35,9 +38,23 @@ const PaymentIcon = () => (
     strokeLinejoin="round"
     className={styles.iconSvg}
   >
-    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-    <line x1="1" y1="10" x2="23" y2="10"></line>
-    <line x1="7" y1="4" x2="7" y2="10"></line>
+    <rect
+      vectorEffect="non-scaling-stroke"
+      x="1"
+      y="4"
+      width="22"
+      height="16"
+      rx="2"
+      ry="2"
+    ></rect>
+    <line
+      vectorEffect="non-scaling-stroke"
+      x1="1"
+      y1="10"
+      x2="23"
+      y2="10"
+    ></line>
+    <line vectorEffect="non-scaling-stroke" x1="7" y1="4" x2="7" y2="10"></line>
   </svg>
 );
 
@@ -54,12 +71,15 @@ const RealTimeIcon = () => (
     strokeLinejoin="round"
     className={styles.iconSvg}
   >
-    <circle cx="12" cy="12" r="10"></circle>
-    <polyline points="12 6 12 12 16 14"></polyline>
-    <path d="M17 1l4 4-4 4"></path>
-    <path d="M21 5H12"></path>
-    <path d="M7 23l-4-4 4-4"></path>
-    <path d="M3 19h9"></path>
+    <circle vectorEffect="non-scaling-stroke" cx="12" cy="12" r="10"></circle>
+    <polyline
+      vectorEffect="non-scaling-stroke"
+      points="12 6 12 12 16 14"
+    ></polyline>
+    <path vectorEffect="non-scaling-stroke" d="M17 1l4 4-4 4"></path>
+    <path vectorEffect="non-scaling-stroke" d="M21 5H12"></path>
+    <path vectorEffect="non-scaling-stroke" d="M7 23l-4-4 4-4"></path>
+    <path vectorEffect="non-scaling-stroke" d="M3 19h9"></path>
   </svg>
 );
 
@@ -76,10 +96,19 @@ const SupportIcon = () => (
     strokeLinejoin="round"
     className={styles.iconSvg}
   >
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-    <circle cx="9" cy="7" r="4"></circle>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+    <path
+      vectorEffect="non-scaling-stroke"
+      d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+    ></path>
+    <circle vectorEffect="non-scaling-stroke" cx="9" cy="7" r="4"></circle>
+    <path
+      vectorEffect="non-scaling-stroke"
+      d="M23 21v-2a4 4 0 0 0-3-3.87"
+    ></path>
+    <path
+      vectorEffect="non-scaling-stroke"
+      d="M16 3.13a4 4 0 0 1 0 7.75"
+    ></path>
   </svg>
 );
 
@@ -96,7 +125,10 @@ const SecurityIcon = () => (
     strokeLinejoin="round"
     className={styles.iconSvg}
   >
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    <path
+      vectorEffect="non-scaling-stroke"
+      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+    ></path>
   </svg>
 );
 
@@ -113,8 +145,22 @@ const MobileAppIcon = () => (
     strokeLinejoin="round"
     className={styles.iconSvg}
   >
-    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+    <rect
+      vectorEffect="non-scaling-stroke"
+      x="5"
+      y="2"
+      width="14"
+      height="20"
+      rx="2"
+      ry="2"
+    ></rect>
+    <line
+      vectorEffect="non-scaling-stroke"
+      x1="12"
+      y1="18"
+      x2="12.01"
+      y2="18"
+    ></line>
   </svg>
 );
 
@@ -188,11 +234,11 @@ const EVSolutions = () => {
                   {/* Icon */}
                   <div className={styles.iconWrapper}>
                     <motion.div
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
+                      initial={{ filter: "blur(10px)", opacity: 0 }}
+                      whileInView={{ filter: "blur(0px)", opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{
-                        duration: 0.4,
+                        duration: 0.3,
                         ease: "easeOut",
                         delay: index * 0.1,
                       }}
