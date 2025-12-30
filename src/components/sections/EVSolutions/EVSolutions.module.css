@@ -65,6 +65,9 @@
   justify-content: center;
   margin-bottom: var(--spacing-lg);
   flex-shrink: 0;
+  /* Performance optimization */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .iconContainer {
@@ -73,7 +76,9 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  /* Performance optimization */
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .iconSvg {
@@ -82,10 +87,15 @@
   color: var(--color-secondary);
   stroke: currentColor;
   flex-shrink: 0;
-  will-change: transform;
+  /* Critical fixes for mobile rendering */
+  will-change: auto;
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  shape-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .cardTitle {

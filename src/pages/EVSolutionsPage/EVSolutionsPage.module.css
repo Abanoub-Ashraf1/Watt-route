@@ -99,6 +99,10 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: var(--transition-normal);
+  /* Added for smooth animations */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  text-align: center;
 }
 
 .benefit:hover {
@@ -107,8 +111,53 @@
 }
 
 .benefitIcon {
-  font-size: clamp(2.5rem, 4vw, 3rem);
-  margin-bottom: var(--spacing-md);
+  /* Updated from emoji styling to SVG container */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 69, 82, 0.1),
+    rgba(86, 145, 102, 0.1)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  color: var(--color-secondary);
+  flex-shrink: 0;
+  /* Performance optimizations */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transition: all 0.3s ease;
+}
+
+/* SVG icons inside benefit cards */
+.benefitIcon svg {
+  width: 40px;
+  height: 40px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  /* Critical mobile rendering fixes */
+  will-change: auto;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  shape-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hover effect for benefit icons */
+.benefit:hover .benefitIcon {
+  transform: translateZ(0) scale(1.1);
+  -webkit-transform: translateZ(0) scale(1.1);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 69, 82, 0.15),
+    rgba(86, 145, 102, 0.15)
+  );
 }
 
 .benefitTitle {
@@ -190,6 +239,18 @@
     padding: var(--spacing-lg);
   }
 
+  /* Mobile-optimized icon sizing */
+  .benefitIcon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .benefitIcon svg {
+    width: 32px;
+    height: 32px;
+  }
+
   .ctaSection {
     padding: var(--spacing-xl) 0;
   }
@@ -212,5 +273,20 @@
   .ctaContent {
     padding: 1.5rem;
     border-radius: var(--radius-md);
+  }
+
+  /* Extra small mobile optimization */
+  .benefitIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .benefitIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .benefit {
+    padding: 1.25rem;
   }
 }
