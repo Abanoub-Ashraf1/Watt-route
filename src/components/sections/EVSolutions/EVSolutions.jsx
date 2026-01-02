@@ -166,6 +166,26 @@ const MobileAppIcon = () => (
 
 const EVSolutions = () => {
   const { t } = useTranslation();
+
+  // Smooth title animation variants
+  const titleAnimation = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier for smooth easing
+      }
+    }
+  };
+
+
   const solutions = [
     {
       id: 1,
@@ -205,6 +225,8 @@ const EVSolutions = () => {
     },
   ];
 
+
+
   return (
     <section className={styles.section} id="ev-solutions">
       <div className={styles.container}>
@@ -215,7 +237,15 @@ const EVSolutions = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h2 className={styles.title}>{t("evSolutions.title")}</h2>
+          <motion.h2 
+            className={styles.title}
+            variants={titleAnimation}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {t("evSolutions.title")}
+          </motion.h2>
           <p className={styles.subtitle}>{t("evSolutions.subtitle")}</p>
         </motion.div>
 
@@ -233,19 +263,9 @@ const EVSolutions = () => {
                 <Card className={styles.card}>
                   {/* Icon */}
                   <div className={styles.iconWrapper}>
-                    <motion.div
-                      initial={{ filter: "blur(10px)", opacity: 0 }}
-                      whileInView={{ filter: "blur(0px)", opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.3,
-                        ease: "easeOut",
-                        delay: index * 0.1,
-                      }}
-                      className={styles.iconContainer}
-                    >
+                    <div className={styles.iconContainer}>
                       <IconComponent />
-                    </motion.div>
+                    </div>
                   </div>
 
                   <h3 className={styles.cardTitle}>{t(solution.titleKey)}</h3>
