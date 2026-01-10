@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import Card from "../../common/Card/Card";
+
 import { fadeInUp, stagger } from "../../../utils/animations";
 import styles from "./EVSolutions.module.css";
 
@@ -259,8 +259,8 @@ const EVSolutions = () => {
           {solutions.map((solution, index) => {
             const IconComponent = solution.icon;
             return (
-              <motion.div key={solution.id} variants={fadeInUp}>
-                <Card className={styles.card}>
+              <motion.div key={solution.id} variants={fadeInUp} className={styles.cardWrapper}>
+                <div className={styles.card}>
                   {/* Icon */}
                   <div className={styles.iconWrapper}>
                     <div className={styles.iconContainer}>
@@ -272,7 +272,7 @@ const EVSolutions = () => {
                   <p className={styles.cardDescription}>
                     {t(solution.descKey)}
                   </p>
-                </Card>
+                </div>
               </motion.div>
             );
           })}

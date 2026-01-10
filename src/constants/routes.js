@@ -15,6 +15,7 @@ export const ROUTES = {
  * Navigation Items for Navbar
  */
 export const NAV_ITEMS = [
+  { name: "Home", path: ROUTES.HOME, translationKey: "home" },
   { name: "About", path: ROUTES.ABOUT, translationKey: "about" },
   {
     name: "EV Solutions",
